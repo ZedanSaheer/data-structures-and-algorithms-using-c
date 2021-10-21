@@ -1,6 +1,18 @@
 #include<stdio.h>
 #include<conio.h>
+#include<string.h>
 
-void main(){
-printf("hello world");
+int main(){
+    char *s;
+    int len ,i;
+    printf("Enter a string : ");
+    gets(s);
+    len = strlen(s);
+    printf("\n \n The reverse of your string is : ");
+    for(i=len;i>=0;i--){
+            printf("%c",*(s+i));
+        }
+    getch();
 }
+
+
