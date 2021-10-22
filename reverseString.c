@@ -8,7 +8,7 @@ int main(){
     printf("Enter a string : ");
     gets(s);
     len = strlen(s);
-    printf("\n \n The reverse of your string is : ");
+    printf("\n The reverse of your string is : ");
     for(i=len;i>=0;i--){
             printf("%c",*(s+i));
         }
