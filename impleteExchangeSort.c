@@ -1,27 +1,34 @@
-#include<stdio.h>
-#include<conio.h>
+#include <stdio.h>
+#include <conio.h>
+#include<stdlib.h>
 
-int main(){
-    int array[10],n,i,j,temp;
-    printf("Enter the limit :");
-    scanf("%d" ,&n);
-    printf("Enter the Elements : \n");
-    for(i=0;i<n;i++){
-        scanf("%d",&array[i]);
+void main(){
+int i,j,k,n,m,flag=0;
+char t[40],p[40];
+printf("Enter text : ");
+gets(t);
+printf("Enter pattern : ");
+gets(p);
+n=strlen(t);
+m=strlen(p);
+for(i=0;i<=n-m;i++)
+    {
+        j=0;
+        while(j<m&&p[j]==t[j+i])
+            {
+                if(j==m){
+                    flag=1;
+                    k+=1;
+                }
+                else{
+                    flag=0;
+                }
+            }
     }
-    for(i=0;i<(n-1);i++){
-        for(j=(i+1);j<n;j++){
-            if(array[i]>array[j]){
-                temp=array[i];
-                array[i]=array[j];
-                array[j]=temp;
-        }
-    }
-}
-    printf("Sorted elements : ");
-    for(i=0;i<n;i++){
-        printf("%d",array[i]);
-    }
-    getch();
-    return 0;
+if(flag==1)
+    printf("pattern found at position : %d" ,k);
+else
+    printf("pattern not found!");
+
+getch();
 }
